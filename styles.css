@@ -1,0 +1,378 @@
+ :root {
+      --fondo: #cec8bd;
+      --presentacion: #c4bc ae;
+      --tarxeta: #d3cec2;
+      --verde: #52563e;
+      --texto: #171916;
+      --secundario: #4e514b;
+      --linea: #a6a395;
+      --branco: #faf9f5;
+      --margen: clamp(24px, 5.16vw, 80px);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-padding-top: 32px; }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: "Marcellus", Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-weight: 400; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    address { font-style: normal; }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
+    }
+
+    .pagina {
+      max-width: 1551px;
+      margin-inline: auto;
+    }
+
+    .etiqueta {
+      color: #69735b;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* Cabecera */
+    .cabecera {
+      min-height: 92px;
+      padding: 6px clamp(24px, 6.7vw, 104px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: clamp(40px, 16vw, 250px);
+      background: var(--verde);
+      color: var(--branco);
+    }
+
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .marca img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .marca span {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .menu a {
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--branco);
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .menu a:hover { opacity: .75; }
+
+    /* Presentación */
+    .presentacion {
+      padding: 72px var(--margen);
+      background: #c4bcae;
+    }
+
+    .presentacion .etiqueta { margin-bottom: 24px; }
+
+    h1 {
+      font-size: clamp(60px, 6.7vw, 104px);
+      line-height: .93;
+      margin-bottom: 24px;
+    }
+
+    .introducion {
+      max-width: 760px;
+      color: var(--secundario);
+      font-family: "Philosopher", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    /* Resumen */
+    .corpo { padding: 72px var(--margen); }
+
+    .resumo { margin-bottom: 56px; }
+    .resumo .etiqueta { margin-bottom: 12px; }
+
+    .resumo h2 {
+      font-size: clamp(32px, 3.35vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .tarxetas {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      padding-inline: 32px;
+    }
+
+    .tarxeta {
+      min-height: 180px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--tarxeta);
+      border: 1px solid rgba(82, 86, 62, .16);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .tarxeta-numero {
+      color: var(--verde);
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tarxeta h3 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: auto;
+    }
+
+    .saber-mais {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 22px;
+      margin-top: 24px;
+      margin-bottom: 14px;
+      background: var(--branco);
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .saber-mais:hover { background: #fff; }
+
+    /* Servicios */
+    .servizo {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      align-items: center;
+      gap: 48px;
+      padding-block: 88px;
+      border-top: 1px solid var(--linea);
+      scroll-margin-top: 24px;
+    }
+
+    .servizo-texto {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .servizo-numero {
+      font-size: 11px;
+      color: var(--verde);
+    }
+
+    .servizo h2 {
+      font-size: 52px;
+      line-height: .98;
+      overflow-wrap: break-word;
+    }
+
+    .servizo-descricion {
+      color: var(--secundario);
+      font-family: "Philosopher", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .servizo-detalles {
+      color: var(--verde);
+      font-size: 11px;
+      line-height: 1.8;
+      word-spacing: 6px;
+    }
+
+    .servizo-imaxe {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* Contacto */
+    .contacto {
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      padding-block: 56px;
+    }
+
+    .contacto h2 {
+      color: var(--verde);
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    .contacto-enlace {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .contacto-enlace::after {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .boton-contacto {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: fit-content;
+      min-height: 50px;
+      padding: 16px 24px;
+      margin-top: 56px;
+      border-radius: 999px;
+      background: var(--texto);
+      color: var(--branco);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .boton-contacto:hover { background: var(--verde); }
+
+    /* Pie */
+    .pie {
+      padding: 54px 64px;
+      background: var(--verde);
+      color: var(--branco);
+    }
+
+    .pie-superior {
+      display: grid;
+      grid-template-columns: 360px 1fr auto;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .pie-descricion {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .pie-direccion {
+      justify-self: center;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .pie-etiqueta {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    .pie-canles {
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .pie-canles .pie-etiqueta { margin-bottom: 0; }
+    .pie-canles a:hover { text-decoration: underline; }
+
+    .pie-marca {
+      display: flex;
+      justify-content: center;
+      margin-block: 24px 9px;
+    }
+
+    .pie-legal {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: #c5c7bb;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1200px) {
+      .cabecera { justify-content: space-between; gap: 32px; }
+      .marca span { font-size: 13px; }
+      .menu { gap: 20px; }
+      .tarxetas { padding-inline: 0; gap: 16px; }
+      .tarxeta h3 { font-size: 20px; }
+      .servizo { grid-template-columns: 300px 1fr; gap: 36px; }
+      .servizo h2 { font-size: 42px; }
+      .pie-superior { grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 800px) {
+      .cabecera {
+        flex-direction: column;
+        padding: 12px 24px 24px;
+        gap: 20px;
+      }
+
+      .marca { gap: 12px; }
+      .marca img { width: 60px; height: 60px; }
+      .marca span { white-space: normal; }
+      .menu { flex-wrap: wrap; justify-content: center; gap: 20px; }
+      .menu a { font-size: 14px; }
+      .presentacion { padding-block: 56px; }
+      .corpo { padding-block: 48px; }
+      .tarxetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .servizo {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-block: 48px;
+      }
+
+      .servizo-texto { max-width: 580px; }
+      .servizo h2 { font-size: 42px; }
+      .servizo-imaxe { height: clamp(240px, 48vw, 360px); }
+      .contacto h2 { font-size: 30px; }
+      .pie { padding: 40px var(--margen); }
+      .pie-superior { grid-template-columns: 1fr; gap: 28px; }
+      .pie-direccion { justify-self: start; }
+      .pie-marca { justify-content: start; margin-block: 32px; }
+      .pie-legal { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 420px) {
+      .tarxetas { grid-template-columns: 1fr; }
+      .introducion, .servizo-descricion { font-size: 18px; }
+      .pie-marca .marca span { font-size: 12px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }

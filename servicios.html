@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Servizos | Orixe — Estudo de Arquitectura</title>
+  <meta name="description"
+        content="Rehabilitación, interiorismo, eficiencia enerxética e xestión integral. Descubre os servizos de Orixe.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Marcellus&family=Philosopher&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="pagina">
+    <header class="cabecera">
+      <a class="marca" href="index.html" aria-label="Orixe — Inicio">
+        <img src="imagenes/logo-orixe.png" alt="" width="80" height="80">
+        <span>Orixe | Estudo de Arquitectura</span>
+      </a>
+
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="proxectos.html">Proxectos</a>
+        <a href="servizos.html" aria-current="page">Servizos</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="presentacion" aria-labelledby="titulo">
+        <p class="etiqueta">O que facemos</p>
+        <h1 id="titulo">Servizos</h1>
+        <p class="introducion">
+          Cada proxecto comeza coa escoita. Entendemos a historia do
+          espazo e as necesidades de quen o habita para ofrecer
+          solucións que perduren.
+        </p>
+      </section>
+
+      <div class="corpo">
+        <section class="resumo" aria-labelledby="resumo-titulo">
+          <p class="etiqueta">Explora os servizos</p>
+          <h2 id="resumo-titulo">
+            Catro camiños para transformar o teu espazo
+          </h2>
+
+          <div class="tarxetas">
+            <article class="tarxeta">
+              <span class="tarxeta-numero">01</span>
+              <h3>Rehabilitación</h3>
+              <a class="saber-mais" href="#rehabilitacion"
+                 aria-label="Saber máis sobre rehabilitación">
+                Saber máis
+              </a>
+            </article>
+
+            <article class="tarxeta">
+              <span class="tarxeta-numero">02</span>
+              <h3>Interiorismo</h3>
+              <a class="saber-mais" href="#interiorismo"
+                 aria-label="Saber máis sobre interiorismo">
+                Saber máis
+              </a>
+            </article>
+
+            <article class="tarxeta">
+              <span class="tarxeta-numero">03</span>
+              <h3>Eficiencia enerxética</h3>
+              <a class="saber-mais" href="#eficiencia"
+                 aria-label="Saber máis sobre eficiencia enerxética">
+                Saber máis
+              </a>
+            </article>
+
+            <article class="tarxeta">
+              <span class="tarxeta-numero">04</span>
+              <h3>Xestión integral</h3>
+              <a class="saber-mais" href="#xestion"
+                 aria-label="Saber máis sobre xestión integral">
+                Saber máis
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section class="servizo" id="rehabilitacion"
+                 aria-labelledby="rehabilitacion-titulo">
+          <div class="servizo-texto">
+            <span class="servizo-numero">01</span>
+            <h2 id="rehabilitacion-titulo">Rehabilitación</h2>
+            <p class="servizo-descricion">
+              Recuperamos a esencia da casa tradicional galega con
+              pedra, madeira e respeto pola súa historia.
+            </p>
+            <p class="servizo-detalles">
+              Pedra · Madeira · Estrutura orixinal
+            </p>
+          </div>
+
+          <img class="servizo-imaxe"
+               src="imagenes/rehabilitacion.png"
+               alt="Interior dunha casa tradicional de pedra e madeira antes da rehabilitación"
+               width="983" height="360">
+        </section>
+
+        <section class="servizo" id="interiorismo"
+                 aria-labelledby="interiorismo-titulo">
+          <div class="servizo-texto">
+            <span class="servizo-numero">02</span>
+            <h2 id="interiorismo-titulo">Interiorismo</h2>
+            <p class="servizo-descricion">
+              Deseñamos interiores contemporáneos que dialogan coa
+              arquitectura e co xeito de vivir da familia.
+            </p>
+            <p class="servizo-detalles">
+              Materiais · Texturas · Deseño de interiores
+            </p>
+          </div>
+
+          <img class="servizo-imaxe"
+               src="imagenes/interiorismo.png"
+               alt="Comedor con paredes de pedra, vigas de madeira e luz natural"
+               width="983" height="360" loading="lazy">
+        </section>
+
+        <section class="servizo" id="eficiencia"
+                 aria-labelledby="eficiencia-titulo">
+          <div class="servizo-texto">
+            <span class="servizo-numero">03</span>
+            <h2 id="eficiencia-titulo">Eficiencia enerxética</h2>
+            <p class="servizo-descricion">
+              Melloramos o confort e a eficiencia do fogar sen perder
+              a súa identidade arquitectónica.
+            </p>
+            <p class="servizo-detalles">
+              Confort · Illamento · Certificados
+            </p>
+          </div>
+
+          <img class="servizo-imaxe"
+               src="imagenes/eficiencia-enerxetica.png"
+               alt="Salón de pedra e madeira con grandes ventás e cheminea"
+               width="983" height="360" loading="lazy">
+        </section>
+
+        <section class="servizo" id="xestion"
+                 aria-labelledby="xestion-titulo">
+          <div class="servizo-texto">
+            <span class="servizo-numero">04</span>
+            <h2 id="xestion-titulo">Xestión integral</h2>
+            <p class="servizo-descricion">
+              Acompañamos o proxecto desde o deseño até a execución,
+              integrando materiais e detalles.
+            </p>
+            <p class="servizo-detalles">
+              Proxecto · Execución · Materiais
+            </p>
+          </div>
+
+          <img class="servizo-imaxe"
+               src="imagenes/xestion-integral.png"
+               alt="Exterior dunha casa galega de pedra rehabilitada"
+               width="983" height="360" loading="lazy">
+        </section>
+
+        <section class="contacto" aria-labelledby="contacto-titulo">
+          <h2 id="contacto-titulo">Tes un proxecto en mente?</h2>
+
+          <a class="contacto-enlace" href="contacto.html">
+            Contacta con nós!
+          </a>
+
+          <a class="boton-contacto" href="contacto.html">
+            <span>Fálanos do teu proxecto</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-superior">
+        <p class="pie-descricion">
+          Arquitectura moderna, co toque de esencia tradicional que nos caracteriza.
+        </p>
+
+        <div class="pie-direccion">
+          <span class="pie-etiqueta">GALICIA</span>
+          <address>
+            C/ Xeneral Pardiñas, 2<br>
+            15701 Santiago de Compostela
+          </address>
+        </div>
+
+        <div class="pie-canles">
+          <span class="pie-etiqueta">Escríbenos</span>
+          <a href="mailto:orixeestudio@gmail.com">
+            orixeestudio@gmail.com
+          </a>
+          <a href="tel:+34981322322">+34 981 322 322</a>
+        </div>
+      </div>
+
+      <div class="pie-marca">
+        <a class="marca" href="index.html">
+          <img src="imagenes/logo-orixe.png"
+               alt="" width="80" height="80" loading="lazy">
+          <span>Orixe | Estudo de Arquitectura</span>
+        </a>
+      </div>
+
+      <div class="pie-legal">
+        <p>© 2026 Orixe | Estudo de Arquitectura</p>
+        <p>Privacidad · Cookies · Créditos</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
