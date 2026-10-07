@@ -1,0 +1,94 @@
+/* Estilos principales de la cabecera */
+*{
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.cabecera {
+  min-height: 92px;
+  padding: 6px clamp(24px, 6.7vw, 104px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(40px, 16vw, 250px);
+  background-color:#52563e ;
+  color: var(--branco);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.marca img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.marca span {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+
+.menu a {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--branco);
+  font-size: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.menu a:hover { 
+  opacity: .75; 
+}
+
+/* Adaptación responsive (pantallas medianas / tablets) */
+@media (max-width: 1200px) {
+  .cabecera { 
+    justify-content: space-between; 
+    gap: 32px; 
+  }
+  .marca span { 
+    font-size: 13px; 
+  }
+  .menu { 
+    gap: 20px; 
+  }
+}
+
+/* Adaptación responsive (móviles) */
+@media (max-width: 800px) {
+  .cabecera {
+    flex-direction: column;
+    padding: 12px 24px 24px;
+    gap: 20px;
+  }
+
+  .marca { 
+    gap: 12px; 
+  }
+  .marca img { 
+    width: 60px; 
+    height: 60px; 
+  }
+  .marca span { 
+    white-space: normal; 
+  }
+  .menu { 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+  }
+  .menu a { 
+    font-size: 14px; 
+  }
+}
