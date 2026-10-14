@@ -184,7 +184,15 @@ h1 {
 .tarxeta-numero {
   color: var(--verde);
   font-size: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+}
+
+.tarxeta-icono {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .tarxeta h3 {
@@ -429,7 +437,9 @@ h1 {
   }
 
   .tarxeta h3 {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 4px;
   }
 
   .servizo {

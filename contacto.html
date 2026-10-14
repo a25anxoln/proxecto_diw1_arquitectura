@@ -102,15 +102,12 @@
           Escribe con liberdade. Queremos coñecer a túa idea.
         </p>
 
-        <!--
-          Este formulario abre el cliente de correo.
-          Para envío directo, sustituye action por la dirección
-          de tu servidor y elimina enctype="text/plain".
-        -->
         <form
+          id="form-contacto"
           action="mailto:orixeestudio@gmail.com"
           method="post"
           enctype="text/plain"
+          novalidate
         >
           <div class="campos-fila">
             <div class="campo">
@@ -121,8 +118,8 @@
                 name="Nome"
                 placeholder="O teu nome"
                 autocomplete="name"
-                required
               >
+              <span class="mensaxe-erro" id="erro-nome"></span>
             </div>
 
             <div class="campo">
@@ -133,8 +130,8 @@
                 name="Email"
                 placeholder="O teu correo electrónico"
                 autocomplete="email"
-                required
               >
+              <span class="mensaxe-erro" id="erro-email"></span>
             </div>
           </div>
 
@@ -144,23 +141,25 @@
               id="mensaxe"
               name="Mensaxe"
               placeholder="Que che gustaría contarnos?"
-              required
             ></textarea>
+            <span class="mensaxe-erro" id="erro-mensaxe"></span>
           </div>
 
-          <div class="consentimento">
-            <input
-              type="checkbox"
-              id="privacidade"
-              name="Privacidade"
-              value="Aceptada"
-              required
-            >
-            <label for="privacidade">
-              Lin e acepto a
-              <a href="privacidad.html">política de privacidade</a>.
-              Os meus datos empregaranse para responder á miña consulta.
-            </label>
+          <div class="consentimento-contenedor">
+            <div class="consentimento">
+              <input
+                type="checkbox"
+                id="privacidade"
+                name="Privacidade"
+                value="Aceptada"
+              >
+              <label for="privacidade">
+                Lin e acepto a
+                <a href="privacidad.html">política de privacidade</a>.
+                Os meus datos empregaranse para responder á miña consulta.
+              </label>
+            </div>
+            <span class="mensaxe-erro" id="erro-privacidade"></span>
           </div>
 
           <button class="enviar" type="submit">
@@ -242,7 +241,7 @@
     </div>
 
     <div class="footer-brand">
-      <div class="brand-logo">
+      <a class="brand-logo" href="inicio.html">
         <img
           src="img/logo.png"
           alt="Logo Orixe"
@@ -250,7 +249,7 @@
           height="60"
           loading="lazy"
         >
-      </div>
+      </a>
 
       <span class="brand-name">
         ORIXE | ESTUDO DE ARQUITECTURA
@@ -269,5 +268,97 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT DE VALIDACIÓN EMBEBIDO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('form-contacto');
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const mensaxe = document.getElementById('mensaxe');
+      const privacidade = document.getElementById('privacidade');
+
+      const erroNome = document.getElementById('erro-nome');
+      const erroEmail = document.getElementById('erro-email');
+      const erroMensaxe = document.getElementById('erro-mensaxe');
+      const erroPrivacidade = document.getElementById('erro-privacidade');
+
+      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function validarNome() {
+        if (nome.value.trim().length < 2) {
+          mostrarErro(nome, erroNome, 'Por favor, introduce o teu nome (mínimo 2 caracteres).');
+          return false;
+        }
+        limparErro(nome, erroNome);
+        return true;
+      }
+
+      function validarEmail() {
+        if (!regexEmail.test(email.value.trim())) {
+          mostrarErro(email, erroEmail, 'Por favor, introduce un correo electrónico válido.');
+          return false;
+        }
+        limparErro(email, erroEmail);
+        return true;
+      }
+
+      function validarMensaxe() {
+        if (mensaxe.value.trim().length < 10) {
+          mostrarErro(mensaxe, erroMensaxe, 'Por favor, escribe a túa mensaxe (mínimo 10 caracteres).');
+          return false;
+        }
+        limparErro(mensaxe, erroMensaxe);
+        return true;
+      }
+
+      function validarPrivacidade() {
+        if (!privacidade.checked) {
+          mostrarErro(privacidade, erroPrivacidade, 'Debes aceptar a política de privacidade para continuar.');
+          return false;
+        }
+        limparErro(privacidade, erroPrivacidade);
+        return true;
+      }
+
+      function mostrarErro(input, elementoErro, mensaxeTexto) {
+        elementoErro.textContent = mensaxeTexto;
+        elementoErro.classList.add('visible');
+        if (input.type !== 'checkbox') {
+          input.classList.add('campo-invalido');
+        } else {
+          input.closest('.consentimento').classList.add('consentimento-invalido');
+        }
+      }
+
+      function limparErro(input, elementoErro) {
+        elementoErro.textContent = '';
+        elementoErro.classList.remove('visible');
+        if (input.type !== 'checkbox') {
+          input.classList.remove('campo-invalido');
+        } else {
+          input.closest('.consentimento').classList.remove('consentimento-invalido');
+        }
+      }
+
+      // Validar en tempo real mentres o usuario escribe/cambia campos
+      nome.addEventListener('input', validarNome);
+      email.addEventListener('input', validarEmail);
+      mensaxe.addEventListener('input', validarMensaxe);
+      privacidade.addEventListener('change', validarPrivacidade);
+
+      // Validar ao enviar o formulario
+      form.addEventListener('submit', function (e) {
+        const isNomeValido = validarNome();
+        const isEmailValido = validarEmail();
+        const isMensaxeValido = validarMensaxe();
+        const isPrivacidadeValida = validarPrivacidade();
+
+        if (!isNomeValido || !isEmailValido || !isMensaxeValido || !isPrivacidadeValida) {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
