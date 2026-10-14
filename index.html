@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="gl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,76 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Inter:wght@600;700&family=Marcellus&family=Philosopher:wght@700&display=swap"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
   <link rel="stylesheet" href="proxectos.css">
 </head>
+
+
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="detail-title">
+  <div class="project-detail">
+    <button class="project-detail__close" type="button" aria-label="Pechar ficha" autofocus>
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <header class="project-detail__header">
+      <p class="project-detail__eyebrow" id="detail-location"></p>
+      <h2 id="detail-title"></h2>
+      <p class="project-detail__intro" id="detail-intro"></p>
+    </header>
+
+    <div class="project-detail__content">
+      <div class="project-detail__comparison">
+        <figure>
+          <img id="detail-before" src="" alt="">
+          <figcaption>Antes</figcaption>
+        </figure>
+
+        <figure>
+          <img id="detail-after" src="" alt="">
+          <figcaption>Despois</figcaption>
+        </figure>
+      </div>
+
+      <div class="project-detail__information">
+        <section>
+          <h3>O punto de partida</h3>
+          <p id="detail-start"></p>
+        </section>
+
+        <section>
+          <h3>A proposta</h3>
+          <p id="detail-proposal"></p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="project-detail__footer">
+      <div>
+        <span class="project-detail__label">Prezo</span>
+        <p id="detail-price"></p>
+      </div>
+
+      <div>
+        <span class="project-detail__label">Localización</span>
+        <p id="detail-place"></p>
+      </div>
+
+      <div>
+        <span class="project-detail__label">Ano</span>
+        <p id="detail-year"></p>
+      </div>
+
+      <div>
+        <span class="project-detail__label">Tipo de proxecto</span>
+        <p>Rehabilitación rural</p>
+      </div>
+    </footer>
+  </div>
+</dialog>
+
+<script src="proxectos.js" defer></script>
+
 
 <body>
   <header class="header">
@@ -42,13 +107,8 @@
           <h1 id="page-title">Proxectos</h1>
         </div>
 
-        <img
-          class="hero__map"
-          src="img/mapaGalicia.png"
-          alt="Mapa de Galicia coas provincias e as localizacións dos proxectos"
-          width="399"
-          height="300"
-        >
+        <img class="hero__map" src="img/mapaGalicia.png"
+          alt="Mapa de Galicia coas provincias e as localizacións dos proxectos" width="399" height="300">
       </div>
     </section>
 
@@ -59,25 +119,12 @@
             Pasa o rato para ver o resultado
           </p>
 
-          <div
-            class="project__photo project__photo--swap"
-            tabindex="0"
-            aria-label="Antigo galiñeiro: enfoca a imaxe para ver a restauración"
-          >
-            <img
-              class="project__before"
-              src="img/gallineroAntiguo.png"
-              alt="Interior do antigo galiñeiro antes da restauración"
-              width="565"
-              height="377"
-            >
-            <img
-              class="project__after"
-              src="img/gallineroRestaurado.png"
-              alt="Galiñeiro restaurado"
-              width="565"
-              height="377"
-            >
+          <div class="project__photo project__photo--swap" tabindex="0"
+            aria-label="Antigo galiñeiro: enfoca a imaxe para ver a restauración">
+            <img class="project__before" src="img/gallineroAntiguo.png"
+              alt="Interior do antigo galiñeiro antes da restauración" width="565" height="377">
+            <img class="project__after" src="img/gallineroRestaurado.png" alt="Galiñeiro restaurado" width="565"
+              height="377">
           </div>
 
           <div class="project__caption">
@@ -92,27 +139,12 @@
             Pasa o rato para ver o resultado
           </p>
 
-          <div
-            class="project__photo project__photo--swap"
-            tabindex="0"
-            aria-label="Antiga corte: enfoca a imaxe para ver a restauración"
-          >
-            <img
-              class="project__before"
-               src="img/terraChaAntes.png"
-           alt="Casa rural de pedra en Terra Chá"
-             width="775"
-              height="362"
-              loading="lazy"
-            >
-            <img
-              class="project__after"
-              src="img/terraChaDespues.png"
-              alt="terraChaDespues"
-              width="775"
-              height="362"
-              loading="lazy"
-            >
+          <div class="project__photo project__photo--swap" tabindex="0"
+            aria-label="Antiga corte: enfoca a imaxe para ver a restauración">
+            <img class="project__before" src="img/terraChaAntes.png" alt="Casa rural de pedra en Terra Chá" width="775"
+              height="362" loading="lazy">
+            <img class="project__after" src="img/terraChaDespues.png" alt="terraChaDespues" width="775" height="362"
+              loading="lazy">
           </div>
 
           <div class="project__caption">
@@ -129,27 +161,12 @@
             Pasa o rato para ver o resultado
           </p>
 
-          <div
-            class="project__photo project__photo--swap"
-            tabindex="0"
-            aria-label="Antiga corte: enfoca a imaxe para ver a restauración"
-          >
-            <img
-              class="project__before"
-              src="img/antigaCorte.png"
-              alt="Interior da antiga corte antes da restauración"
-              width="500"
-              height="273"
-              loading="lazy"
-            >
-            <img
-              class="project__after"
-              src="img/corteRestaurada.png"
-              alt="Antiga corte restaurada"
-              width="500"
-              height="273"
-              loading="lazy"
-            >
+          <div class="project__photo project__photo--swap" tabindex="0"
+            aria-label="Antiga corte: enfoca a imaxe para ver a restauración">
+            <img class="project__before" src="img/antigaCorte.png" alt="Interior da antiga corte antes da restauración"
+              width="500" height="273" loading="lazy">
+            <img class="project__after" src="img/corteRestaurada.png" alt="Antiga corte restaurada" width="500"
+              height="273" loading="lazy">
           </div>
 
           <div class="project__caption">
@@ -163,27 +180,12 @@
             Pasa o rato para ver o resultado
           </p>
 
-          <div
-            class="project__photo project__photo--swap"
-            tabindex="0"
-            aria-label="Casa rural en Pontevedra: enfoca a imaxe para ver a restauración"
-          >
-            <img
-              class="project__before"
-              src="img/casaRuralPontevedra.png"
-              alt="Casa rural en Pontevedra antes da restauración"
-              width="674"
-              height="448"
-              loading="lazy"
-            >
-            <img
-              class="project__after"
-              src="img/casaRuralPontevedraDespues.png"
-              alt="Casa rural en Pontevedra restaurada"
-              width="674"
-              height="448"
-              loading="lazy"
-            >
+          <div class="project__photo project__photo--swap" tabindex="0"
+            aria-label="Casa rural en Pontevedra: enfoca a imaxe para ver a restauración">
+            <img class="project__before" src="img/casaRuralPontevedra.png"
+              alt="Casa rural en Pontevedra antes da restauración" width="674" height="448" loading="lazy">
+            <img class="project__after" src="img/casaRuralPontevedraDespues.png"
+              alt="Casa rural en Pontevedra restaurada" width="674" height="448" loading="lazy">
           </div>
 
           <div class="project__caption">
@@ -223,9 +225,9 @@
           <img src="img/logoInsta.png" alt="Instagram" width="50" height="50">
 
           <a href="https://github.com/a25anxoln/proxecto_diw1_arquitectura">
-          <img src="img/logoGit.png" alt="GitHub" width="50" height="50">
+            <img src="img/logoGit.png" alt="GitHub" width="50" height="50">
           </a>
-          
+
         </div>
       </div>
 
@@ -247,5 +249,6 @@
     </div>
   </footer>
 </body>
+
 </html>
 ```__
