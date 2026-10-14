@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contacto | Orixe — Estudo de Arquitectura</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Marcellus&family=Philosopher&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/contactoCambiado.css">
+</head>
+
+<body>
+  <header class="cabecera">
+    <a class="marca" href="index.html" aria-label="Orixe — Inicio">
+      <img
+        src="img/logo.png"
+        alt=""
+        width="80"
+        height="80"
+      >
+      <span>Orixe | Estudo de Arquitectura</span>
+    </a>
+
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="Inicio.html">Inicio</a>
+      <a href="Proxectos.html">Proxectos</a>
+      <a href="Servizos.html">Servizos</a>
+      <a href="Contacto.html" aria-current="page">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="presentacion" aria-labelledby="titulo-contacto">
+      <div class="titular">
+        <p class="antetitulo">Toda casa comeza cunha conversa</p>
+        <h1 id="titulo-contacto">Contacto</h1>
+      </div>
+
+      <p class="introduccion">
+        Unha casa que recuperar, unha idea por construír ou unha
+        dúbida. Cóntanos o que tes en mente; estamos aquí para
+        escoitarte.
+      </p>
+    </section>
+
+    <section class="conversa" aria-label="Contacta co estudo">
+      <div class="estudo">
+        <h2>Falamos do teu proxecto?</h2>
+
+        <address class="datos-contacto">
+          <div class="dato">
+            <p class="rotulo">Escríbenos</p>
+            <a href="mailto:orixeestudio@gmail.com">
+              orixeestudio@gmail.com
+            </a>
+          </div>
+
+          <div class="dato">
+            <p class="rotulo">Chámanos</p>
+            <a href="tel:+34981322322">+34 981 322 322</a>
+          </div>
+
+          <div class="dato">
+            <p class="rotulo">Atópanos en Galicia</p>
+            <p>
+              C/ Xeneral Pardiñas, 2<br>
+              15701 Santiago de Compostela
+            </p>
+          </div>
+        </address>
+
+        <figure class="mapa">
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=C%2F+Xeneral+Pardi%C3%B1as%2C+2%2C+15701+Santiago+de+Compostela"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver a ubicación do estudo en Google Maps"
+          >
+            <img
+              src="img/mapa.png"
+              alt="Mapa de situación do estudo en Santiago de Compostela"
+              width="510"
+              height="220"
+            >
+          </a>
+
+          <figcaption>
+            Mapa de situación · C/ Xeneral Pardiñas, 2
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="formulario-contacto">
+        <h2>Déixanos unha mensaxe</h2>
+
+        <p class="descripcion">
+          Escribe con liberdade. Queremos coñecer a túa idea.
+        </p>
+
+        <!--
+          Este formulario abre el cliente de correo.
+          Para envío directo, sustituye action por la dirección
+          de tu servidor y elimina enctype="text/plain".
+        -->
+        <form
+          action="mailto:orixeestudio@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="campos-fila">
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                id="nome"
+                name="Nome"
+                placeholder="O teu nome"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="campo">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="Email"
+                placeholder="O teu correo electrónico"
+                autocomplete="email"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="campo campo-mensaxe">
+            <label for="mensaxe">Mensaxe</label>
+            <textarea
+              id="mensaxe"
+              name="Mensaxe"
+              placeholder="Que che gustaría contarnos?"
+              required
+            ></textarea>
+          </div>
+
+          <div class="consentimento">
+            <input
+              type="checkbox"
+              id="privacidade"
+              name="Privacidade"
+              value="Aceptada"
+              required
+            >
+            <label for="privacidade">
+              Lin e acepto a
+              <a href="privacidad.html">política de privacidade</a>.
+              Os meus datos empregaranse para responder á miña consulta.
+            </label>
+          </div>
+
+          <button class="enviar" type="submit">
+            Enviar mensaxe
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="imagen-cita" aria-label="A nosa filosofía">
+      <img
+        class="foto-estudio"
+        src="img/Tienda.jpg"
+        alt="Fachada do estudo de arquitectura Orixe"
+        width="1558"
+        height="941"
+        loading="lazy"
+      >
+
+      <div class="cita">
+        <blockquote>
+          Cada proxecto é unha historia que merece ser contada
+          con coidado e oficio.
+        </blockquote>
+        <p>Orixe · Estudo de Arquitectura</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col slogan-col">
+        <p>
+          Arquitectura moderna, co toque de esencia tradicional
+          que nos caracteriza.
+        </p>
+      </div>
+
+      <div class="footer-col address-col">
+        <h4>GALICIA</h4>
+        <p>C/ Xeneral Pardiñas, 2</p>
+        <p>15701 Santiago de Compostela</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>ESCRÍBENOS</h4>
+        <p>
+          <a href="mailto:orixeestudio@gmail.com">
+            orixeestudio@gmail.com
+          </a>
+        </p>
+        <p>
+          <a href="tel:+34981322322">+34 981 322 322</a>
+        </p>
+      </div>
+
+      <div class="footer-col social-col">
+        <a href="#" aria-label="Instagram">
+          <img
+            src="img/logoInsta.png"
+            alt=""
+            width="60"
+            height="60"
+            loading="lazy"
+          >
+        </a>
+
+        <a href="https://github.com/a25anxoln/proxecto_diw1_arquitectura" aria-label="GitHub/Portafolio">
+          <img
+            src="img/logoGit.png"
+            alt=""
+            width="60"
+            height="60"
+            loading="lazy"
+          >
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-brand">
+      <div class="brand-logo">
+        <img
+          src="img/logo.png"
+          alt="Logo Orixe"
+          width="60"
+          height="60"
+          loading="lazy"
+        >
+      </div>
+
+      <span class="brand-name">
+        ORIXE | ESTUDO DE ARQUITECTURA
+      </span>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2026 ORIXE | ESTUDO DE ARQUITECTURA
+      </div>
+
+      <div class="legal-links">
+        <a href="#">PRIVACIDAD</a> &middot;
+        <a href="#">COOKIES</a> &middot;
+        <a href="#">CRÉDITOS</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
