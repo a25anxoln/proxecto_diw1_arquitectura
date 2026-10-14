@@ -58,7 +58,7 @@ textarea:focus-visible,
   min-height: 92px;
   padding: 6px clamp(24px, 6.7vw, 104px);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: clamp(40px, 16vw, 250px);
   background: var(--verde);
