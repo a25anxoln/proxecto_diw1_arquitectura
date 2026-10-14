@@ -1,0 +1,458 @@
+ :root {
+      --fondo: #cec8bd;
+      --presentacion: #c4bc ae;
+      --tarxeta: #d3cec2;
+      --verde: #52563e;
+      --texto: #171916;
+      --secundario: #4e514b;
+      --linea: #a6a395;
+      --branco: #faf9f5;
+      --margen: clamp(24px, 5.16vw, 80px);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-padding-top: 32px; }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: "Marcellus", Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-weight: 400; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    address { font-style: normal; }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
+    }
+
+    .pagina {
+      max-width: 1551px;
+      margin-inline: auto;
+    }
+
+    .etiqueta {
+      color: #69735b;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* Cabecera */
+    .cabecera {
+      min-height: 92px;
+      padding: 6px clamp(24px, 6.7vw, 104px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: clamp(40px, 16vw, 250px);
+      background: var(--verde);
+      color: var(--branco);
+    }
+
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .marca img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .marca span {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .menu a {
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--branco);
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .menu a:hover { opacity: .75; }
+
+    /* Presentación */
+    .presentacion {
+      padding: 72px var(--margen);
+      background: #c4bcae;
+    }
+
+    .presentacion .etiqueta { margin-bottom: 24px; }
+
+    h1 {
+      font-size: clamp(60px, 6.7vw, 104px);
+      line-height: .93;
+      margin-bottom: 24px;
+    }
+
+    .introducion {
+      max-width: 760px;
+      color: var(--secundario);
+      font-family: "Philosopher", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    /* Resumen */
+    .corpo { padding: 72px var(--margen); }
+
+    .resumo { margin-bottom: 56px; }
+    .resumo .etiqueta { margin-bottom: 12px; }
+
+    .resumo h2 {
+      font-size: clamp(32px, 3.35vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .tarxetas {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      padding-inline: 32px;
+    }
+
+    .tarxeta {
+      min-height: 180px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--tarxeta);
+      border: 1px solid rgba(82, 86, 62, .16);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .tarxeta-numero {
+      color: var(--verde);
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tarxeta h3 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: auto;
+    }
+
+    .saber-mais {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 22px;
+      margin-top: 24px;
+      margin-bottom: 14px;
+      background: var(--branco);
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .saber-mais:hover { background: #fff; }
+
+    /* Servicios */
+    .servizo {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      align-items: center;
+      gap: 48px;
+      padding-block: 88px;
+      border-top: 1px solid var(--linea);
+      scroll-margin-top: 24px;
+    }
+
+    .servizo-texto {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .servizo-numero {
+      font-size: 11px;
+      color: var(--verde);
+    }
+
+    .servizo h2 {
+      font-size: 52px;
+      line-height: .98;
+      overflow-wrap: break-word;
+    }
+
+    .servizo-descricion {
+      color: var(--secundario);
+      font-family: "Philosopher", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .servizo-detalles {
+      color: var(--verde);
+      font-size: 11px;
+      line-height: 1.8;
+      word-spacing: 6px;
+    }
+
+    .servizo-imaxe {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* Contacto */
+    .contacto {
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      padding-block: 56px;
+    }
+
+    .contacto h2 {
+      color: var(--verde);
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    .contacto-enlace {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .contacto-enlace::after {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .boton-contacto {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: fit-content;
+      min-height: 50px;
+      padding: 16px 24px;
+      margin-top: 56px;
+      border-radius: 999px;
+      background: var(--texto);
+      color: var(--branco);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .boton-contacto:hover { background: var(--verde); }
+
+    /* Estilos generales del Footer */
+.site-footer {
+  background-color: #4a523d; /* Color verde oliva oscuro del diseño */
+  color: #d8d8ce; /* Color del texto beige claro */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px 60px 20px 60px;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal en cuadrícula */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 0.5fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Estilos de las columnas */
+.footer-col p {
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #d8d8ce;
+}
+
+.footer-col h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  color: #c2c2b4;
+}
+
+.footer-col a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-col a:hover {
+  opacity: 0.8;
+}
+
+/* Columna de redes sociales (iconos a la derecha) */
+.social-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.social-col a {
+  color: #d8d8ce;
+  display: inline-block;
+}
+
+/* Marca central (Logo y Nombre) */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0 20px 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Barra inferior (Copyright y enlaces legales) */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(216, 216, 206, 0.15); /* Línea divisoria suave */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #9a9f8e;
+  letter-spacing: 0.5px;
+}
+
+.legal-links a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 3px;
+}
+
+.legal-links a:hover {
+  color: #d8d8ce;
+}
+
+/* Adaptación Responsive (Móviles y Tablets) */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 20px 15px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .social-col {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+    @media (max-width: 1200px) {
+      .cabecera { justify-content: space-between; gap: 32px; }
+      .marca span { font-size: 13px; }
+      .menu { gap: 20px; }
+      .tarxetas { padding-inline: 0; gap: 16px; }
+      .tarxeta h3 { font-size: 20px; }
+      .servizo { grid-template-columns: 300px 1fr; gap: 36px; }
+      .servizo h2 { font-size: 42px; }
+      .pie-superior { grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 800px) {
+      .cabecera {
+        flex-direction: column;
+        padding: 12px 24px 24px;
+        gap: 20px;
+      }
+
+      .marca { gap: 12px; }
+      .marca img { width: 60px; height: 60px; }
+      .marca span { white-space: normal; }
+      .menu { flex-wrap: wrap; justify-content: center; gap: 20px; }
+      .menu a { font-size: 14px; }
+      .presentacion { padding-block: 56px; }
+      .corpo { padding-block: 48px; }
+      .tarxetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .servizo {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-block: 48px;
+      }
+
+      .servizo-texto { max-width: 580px; }
+      .servizo h2 { font-size: 42px; }
+      .servizo-imaxe { height: clamp(240px, 48vw, 360px); }
+      .contacto h2 { font-size: 30px; }
+      .pie { padding: 40px var(--margen); }
+      .pie-superior { grid-template-columns: 1fr; gap: 28px; }
+      .pie-direccion { justify-self: start; }
+      .pie-marca { justify-content: start; margin-block: 32px; }
+      .pie-legal { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 420px) {
+      .tarxetas { grid-template-columns: 1fr; }
+      .introducion, .servizo-descricion { font-size: 18px; }
+      .pie-marca .marca span { font-size: 12px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
