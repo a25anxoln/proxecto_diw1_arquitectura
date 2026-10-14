@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="gl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Orixe | Estudo de Arquitectura</title>
+
+  <link rel="stylesheet" href="/styles/stylesInicio.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contido">Ir ao contido</a>
+
+  <!-- CABECERA Y CARRUSEL -->
+  <section
+    class="hero"
+    id="inicio"
+    aria-label="Carrusel de arquitectura"
+    aria-roledescription="carrusel"
+    tabindex="0"
+  >
+    <div class="slides">
+      <!-- Foto original -->
+      <div
+        class="slide is-active"
+        role="group"
+        aria-roledescription="diapositiva"
+      >
+        <img
+          src="img/imaxe1-carrusel.png"
+          alt="Casa de pedra e madeira nunha paisaxe costeira galega"
+          fetchpriority="high"
+        >
+      </div>
+
+      <!-- Sustituye estas tres fotos por las tuyas -->
+      <div
+        class="slide"
+        role="group"
+        aria-roledescription="diapositiva"
+        aria-label="2 de 4"
+        aria-hidden="true"
+      >
+        <img
+          src="img/imaxe2-carrusel.png"
+          alt="Exemplo de arquitectura: vivenda contemporánea con xardín"
+        >
+      </div>
+
+      <div
+        class="slide"
+        role="group"
+        aria-roledescription="diapositiva"
+        aria-label="3 de 4"
+        aria-hidden="true"
+      >
+        <img
+          src="img/imaxe3-carrusel.png"
+          alt="Exemplo de interiorismo: espazo luminoso con materiais naturais"
+        >
+      </div>
+
+      <div
+        class="slide"
+        role="group"
+        aria-roledescription="diapositiva"
+        aria-label="4 de 4"
+        aria-hidden="true"
+      >
+        <img
+          src="img/imaxe4-carrusel.png"
+          alt="Exemplo de interiorismo: salón acolledor con tons cálidos"
+        >
+      </div>
+    </div>
+
+    <!-- Menú colocado sobre las fotografías -->
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Orixe, inicio">
+        <img
+          src="img/logo.png"
+          alt=""
+          width="80"
+          height="80"
+        >
+        <span>Orixe | Estudo de Arquitectura</span>
+      </a>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#proxectos">Proxectos</a>
+        <a href="#servizo">Servizo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <button
+      class="carousel-arrow previous"
+      type="button"
+      aria-label="Foto anterior"
+      aria-controls="inicio"
+    >
+      <span aria-hidden="true">←</span>
+    </button>
+
+    <div class="hero-copy">
+      <p>Arquitectura · Interiorismo · Aldea</p>
+      <h1>Damos forma ás túas ideas</h1>
+    </div>
+
+    <button
+      class="carousel-arrow next"
+      type="button"
+      aria-label="Foto seguinte"
+      aria-controls="inicio"
+    >
+      <span aria-hidden="true">→</span>
+    </button>
+
+    <div class="project-caption">
+      <p id="project-name">Casa da Costa</p>
+      <p id="project-location">Muros · 2025</p>
+    </div>
+
+    <p
+      class="sr-only"
+      id="carousel-status"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      Foto 1 de 4
+    </p>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main id="contido">
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">A que nos dedicamos?</h2>
+
+      <article
+  class="project-card comparison-card"
+  id="proxectos"
+  tabindex="0"
+  aria-label="Antes e despois da rehabilitación. Pasa o rato ou toca a tarxeta para ver o resultado."
+>
+  <div class="comparison-content">
+
+    <!-- Estado inicial: ANTES -->
+    <div class="comparison-face comparison-before">
+      <div class="project-image">
+        <img
+          src="img/imaxe-tarxeta-antes.png"
+          alt="Casa tradicional galega antes da rehabilitación"
+          width="604"
+          height="440"
+          loading="lazy"
+        >
+        <span class="image-badge">Antes</span>
+      </div>
+
+      <h3>Antes</h3>
+
+      <p class="project-subtitle">
+        O potencial oculto da túa casa de sempre
+      </p>
+
+      <p class="project-description">
+        Transformamos a túa casa tradicional galega nun espazo
+        cómodo e sostible. Analizamos a estrutura orixinal para
+        recuperar todo o seu potencial e historia.
+      </p>
+    </div>
+
+    <!-- Estado ao pasar o rato / interactuar: DESPOIS -->
+    <div class="comparison-face comparison-after" aria-hidden="true">
+      <div class="project-image">
+        <img
+          src="img/imaxe-tarxeta-despois.png"
+          alt="Proposta de resultado da rehabilitación da casa"
+          width="604"
+          height="440"
+          loading="lazy"
+        >
+        <span class="image-badge">Despois</span>
+      </div>
+
+      <h3>Despois</h3>
+
+      <p class="project-subtitle">
+        A esencia de sempre, unha nova forma de vivir
+      </p>
+
+      <p class="project-description">
+        A proposta recupera o carácter da casa e combina materiais
+        tradicionais con espazos máis luminosos e funcionais.
+        Unha nova vida para o fogar, sen perder a súa identidade.
+      </p>
+    </div>
+
+  </div>
+</article>
+
+
+      <div class="information-grid">
+        <article class="information-card">
+          <h3>O noso enfoque</h3>
+          <h4>Raíz tradicional, futuro habitable</h4>
+
+          <p>
+            Recuperamos a esencia da arquitectura rural galega para
+            crear espazos cómodos, sostibles e conectados coa paisaxe.
+          </p>
+        </article>
+
+        <article class="information-card" id="servizo">
+          <h3>Servizos</h3>
+
+          <ul>
+            <li>Deseño arquitectónico</li>
+            <li>Interiorismo e iluminación</li>
+            <li>Rehabilitación e eficiencia enerxética</li>
+          </ul>
+        </article>
+
+        <article class="information-card">
+          <h3>Como traballamos</h3>
+
+          <ul>
+            <li>Análise da estrutura orixinal</li>
+            <li>Deseño integral e execución</li>
+            <li>Certificación enerxética e entrega</li>
+          </ul>
+        </article>
+      </div>
+
+      <a
+        class="contact-button"
+        href="Contacto.html"
+      >
+        Fálanos do teu proxecto
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-col slogan-col">
+                <p>Arquitectura moderna, co toque de esencia tradicional que nos caracteriza.</p>
+            </div>
+
+            <div class="footer-col address-col">
+                <h4>GALICIA</h4>
+                <p>C/ Xeneral Pardiñas, 2</p>
+                <p>15701 Santiago de Compostela</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>ESCRÍBENOS</h4>
+                <p><a href="mailto:orixeestudio@gmail.com">orixeestudio@gmail.com</a></p>
+                <p><a href="tel:+34981322322">+34 981 322 322</a></p>
+            </div>
+
+            <div class="footer-col social-col">
+                <a href="#" aria-label="Instagram">
+                    <img src="/img/logoInsta.png" alt="Logo" width="60px" height="60px">
+                </a>
+                <a href="https://github.com/a25anxoln/proxecto_diw1_arquitectura" aria-label="GitHub/Portafolio">
+                    <img src="/img/logoGit.png" alt="Logo" width="60px" height="60px">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-brand">
+            <div class="brand-logo">
+                <img src="/img/logo.png" alt="Logo" width="60px" height="60px">
+            </div>
+            <span class="brand-name">ORIXE | ESTUDO DE ARQUITECTURA</span>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2026 ORIXE | ESTUDO DE ARQUITECTURA
+            </div>
+            <div class="legal-links">
+                <a href="#">PRIVACIDAD</a> &middot;
+                <a href="#">COOKIES</a> &middot;
+                <a href="#">CRÉDITOS</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
