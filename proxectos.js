@@ -6,7 +6,11 @@ const projects = [
         place: "Ordes",
         year: "2018",
         before: "img/gallineroAntiguo.png",
-        after: "img/gallineroRestaurado.png",
+        after: [
+            "img/gallineroRestaurado.png",
+            "",
+            ""
+        ],
         intro:
             "Unha nova vida para un espazo ligado á arquitectura rural galega.",
         start:
@@ -69,13 +73,11 @@ const fields = {
     location: dialog.querySelector("#detail-location"),
     intro: dialog.querySelector("#detail-intro"),
     before: dialog.querySelector("#detail-before"),
-    after: dialog.querySelector("#detail-after"),
     start: dialog.querySelector("#detail-start"),
     proposal: dialog.querySelector("#detail-proposal"),
     place: dialog.querySelector("#detail-place"),
     year: dialog.querySelector("#detail-year"),
     price: dialog.querySelector("#detail-price"),
-
 };
 
 let lastTrigger = null;
@@ -95,8 +97,60 @@ function openProject(project, trigger) {
     fields.before.src = project.before;
     fields.before.alt = `${project.title}: antes da rehabilitación`;
 
-    fields.after.src = project.after;
-    fields.after.alt = `${project.title}: despois da rehabilitación`;
+    const afterContainer = dialog.querySelector("#detail-after-container");
+
+    if (Array.isArray(project.after) && project.after.length > 1) {
+        afterContainer.innerHTML = `
+            <div class="dialog-carousel">
+                <div class="dialog-carousel__track">
+                    ${project.after.map((src, idx) => `
+                        <div class="dialog-carousel__slide">
+                            <img src="${src}" alt="${project.title}: despois da rehabilitación (imaxe ${idx + 1})">
+                        </div>
+                    `).join('')}
+                </div>
+                <button class="dialog-carousel__btn dialog-carousel__btn--prev" type="button" aria-label="Imaxe anterior">‹</button>
+                <button class="dialog-carousel__btn dialog-carousel__btn--next" type="button" aria-label="Imaxe seguinte">›</button>
+                <div class="dialog-carousel__dots">
+                    ${project.after.map((_, idx) => `
+                        <button class="dialog-carousel__dot ${idx === 0 ? 'active' : ''}" type="button" aria-label="Imaxe ${idx + 1}"></button>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
+        const track = afterContainer.querySelector(".dialog-carousel__track");
+        const prevBtn = afterContainer.querySelector(".dialog-carousel__btn--prev");
+        const nextBtn = afterContainer.querySelector(".dialog-carousel__btn--next");
+        const dots = Array.from(afterContainer.querySelectorAll(".dialog-carousel__dot"));
+        let currentIdx = 0;
+
+        function goToSlide(index) {
+            currentIdx = (index + project.after.length) % project.after.length;
+            track.style.transform = `translateX(-${currentIdx * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIdx));
+        }
+
+        prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goToSlide(currentIdx - 1);
+        });
+
+        nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goToSlide(currentIdx + 1);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", (e) => {
+                e.stopPropagation();
+                goToSlide(i);
+            });
+        });
+    } else {
+        const afterSrc = Array.isArray(project.after) ? project.after[0] : project.after;
+        afterContainer.innerHTML = `<img id="detail-after" src="${afterSrc}" alt="${project.title}: despois da rehabilitación">`;
+    }
 
     lastTrigger = trigger;
 
@@ -110,14 +164,12 @@ projects.forEach((project) => {
 
     if (!card || !trigger) return;
 
-    // Aproveita o elemento enfocable que xa existe no teu HTML.
     trigger.setAttribute("role", "button");
     trigger.setAttribute("tabindex", "0");
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-controls", "project-dialog");
     trigger.setAttribute("aria-label", `Ver ficha: ${project.title}`);
 
-    // Permite abrir a ficha desde a imaxe ou o título da tarxeta.
     card.addEventListener("click", () => {
         openProject(project, trigger);
     });
@@ -134,7 +186,6 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 });
 
-// Pechar ao pulsar no fondo exterior.
 dialog.addEventListener("click", (event) => {
     if (event.target !== dialog) return;
 
@@ -148,7 +199,6 @@ dialog.addEventListener("click", (event) => {
     if (outside) dialog.close();
 });
 
-// Escape péchao de forma nativa; tamén restaura o foco.
 dialog.addEventListener("close", () => {
     document.body.classList.remove("project-dialog-open");
     lastTrigger?.focus({ preventScroll: true });

@@ -990,9 +990,45 @@ h2 {
   }
 
 }
+/* ==========================================
+   ESTILOS DE CAMPOS, AUTOCOMPLETADO E VALIDACIÓN
+   ========================================== */
+
+/* Mantener el color de fondo original de la paleta al enfocar */
+.campo input,
+.campo textarea {
+  background-color: var(--campo);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  background-color: var(--campo);
+  outline: none;
+}
+
+/* Bloquear el fondo blanco/amarillo por defecto del autocompletado del navegador */
+.campo input:-webkit-autofill,
+.campo input:-webkit-autofill:hover, 
+.campo input:-webkit-autofill:focus,
+.campo textarea:-webkit-autofill,
+.campo textarea:-webkit-autofill:hover,
+.campo textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--texto);
+  -webkit-box-shadow: 0 0 0px 1000px var(--campo) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Estado de campo no válido: tono rojizo/terroso integrado en la paleta (sin blancos) */
+.campo input.campo-invalido,
+.campo textarea.campo-invalido {
+  border-bottom: 2px solid #a82d2d !important;
+  background-color: #cbbfbd !important;
+}
+
+/* Mensaje de error en rojo cálido */
 .mensaxe-erro {
   display: none;
-  color: #d32f2f;
+  color: #a82d2d;
   font-family: "Inter", Arial, sans-serif;
   font-size: 12px;
   font-weight: 600;
@@ -1002,12 +1038,6 @@ h2 {
 
 .mensaxe-erro.visible {
   display: block;
-}
-
-.campo input.campo-invalido,
-.campo textarea.campo-invalido {
-  border-bottom: 2px solid #d32f2f !important;
-  background-color: #f7e8e8;
 }
 
 .consentimento-contenedor {
@@ -1024,5 +1054,5 @@ h2 {
 }
 
 .consentimento.consentimento-invalido {
-  outline: 1px dashed #d32f2f;
+  outline: 1px dashed #a82d2d;
 }
