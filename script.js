@@ -15,7 +15,6 @@ const projectLocation = document.getElementById("project-location");
 let currentSlide = 0;
 
 function showSlide(index) {
-    // Mantener el índice dentro del carrusel.
     currentSlide = (index + slides.length) % slides.length;
 
     slides.forEach((slide, slideIndex) => {
@@ -27,7 +26,6 @@ function showSlide(index) {
 
     const activeSlide = slides[currentSlide];
 
-    // Mostrar la leyenda solo si la fotografía tiene datos de proyecto.
     caption.hidden = !activeSlide.dataset.project;
 
     projectName.textContent = activeSlide.dataset.project || "";
@@ -36,17 +34,14 @@ function showSlide(index) {
     status.textContent = `Foto ${currentSlide + 1} de ${slides.length}`;
 }
 
-// Flecha izquierda: foto anterior.
 previous.addEventListener("click", () => {
     showSlide(currentSlide - 1);
 });
 
-// Flecha derecha: foto siguiente.
 next.addEventListener("click", () => {
     showSlide(currentSlide + 1);
 });
 
-// También permite usar las flechas del teclado.
 carousel.addEventListener("keydown", (event) => {
     const isCarouselControl =
         event.target === carousel ||

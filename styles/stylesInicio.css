@@ -75,7 +75,6 @@ a {
   transform: translateY(0);
 }
 
-/* CABECERA Y CARRUSEL */
 
 .hero {
   position: relative;
@@ -111,7 +110,6 @@ a {
   object-position: center;
 }
 
-/* Velo para que el texto blanco sea legible */
 .slides::after {
   content: "";
   position: absolute;
@@ -170,7 +168,6 @@ a {
   white-space: nowrap;
 }
 
-/* Subrayado oculto por defecto */
 .navigation a::after {
   content: "";
   position: absolute;
@@ -184,7 +181,6 @@ a {
   transition: transform 180ms ease;
 }
 
-/* Aparece al pasar el ratón o enfocar con el teclado */
 .navigation a:hover::after,
 .navigation a:focus-visible::after {
   transform: scaleX(1);
@@ -268,7 +264,6 @@ a {
   letter-spacing: 0.05em;
 }
 
-/* CONTENIDO PRINCIPAL */
 
 .about {
   max-width: 1700px;
@@ -423,7 +418,6 @@ a {
   line-height: 1;
 }
 
-/* Estilos generales del Footer */
 .site-footer {
   background-color: #4a523d;
   color: #d8d8ce;
@@ -523,17 +517,12 @@ a {
   color: #d8d8ce;
 }
 
-/* ==========================================
-   TARXETA COMPARATIVA (ANTES / DESPOIS)
-   ========================================== */
-
 .comparison-card {
   position: relative;
   cursor: pointer;
   user-select: none;
 }
 
-/* Superposición exacta dos dous estados */
 .comparison-content {
   display: grid;
   grid-template-areas: "card-content";
@@ -544,19 +533,16 @@ a {
   transition: opacity 0.4s ease-in-out;
 }
 
-/* Estado inicial: ANTES */
 .comparison-before {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Estado oculto: DESPOIS */
 .comparison-after {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Transición ao pasar o rato ou enfocar */
 .comparison-card:hover .comparison-before,
 .comparison-card:focus-within .comparison-before,
 .comparison-card.is-active .comparison-before {

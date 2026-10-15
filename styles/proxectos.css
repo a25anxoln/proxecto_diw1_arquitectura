@@ -52,7 +52,6 @@ textarea:focus-visible,
   outline-offset: 5px;
 }
 
-/* CABECERA */
 
 .cabecera {
   min-height: 92px;
@@ -104,7 +103,6 @@ textarea:focus-visible,
   border-bottom-color: var(--branco);
 }
 
-/* PRESENTACIÓN */
 
 .hero {
   background: #c4bcae;
@@ -145,7 +143,6 @@ textarea:focus-visible,
   border-radius: 10px;
 }
 
-/* PROYECTOS */
 
 .projects {
   max-width: 1551px;
@@ -221,7 +218,6 @@ textarea:focus-visible,
   aspect-ratio: 674 / 448;
 }
 
-/* Antes / después, sin JavaScript */
 
 .project__after {
   position: absolute;
@@ -263,7 +259,6 @@ textarea:focus-visible,
   text-transform: uppercase;
 }
 
-/* PIE DE PÁGINA */
 
 .site-footer {
   background-color: #4a523d;
@@ -369,7 +364,6 @@ textarea:focus-visible,
   color: #d8d8ce;
 }
 
-/* TABLET */
 
 @media (max-width: 1200px) {
   .cabecera {
@@ -396,7 +390,6 @@ textarea:focus-visible,
   }
 }
 
-/* MÓVIL */
 
 @media (max-width: 800px) {
   .cabecera {

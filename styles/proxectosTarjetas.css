@@ -1,5 +1,3 @@
-/* FICHAS DE PROYECTO */
-
 body.project-dialog-open {
   overflow: hidden;
 }
@@ -35,7 +33,6 @@ body.project-dialog-open {
   padding: 52px 56px 40px;
 }
 
-/* Botón de cierre */
 
 .project-detail__close {
   position: absolute;
@@ -71,7 +68,6 @@ body.project-dialog-open {
   outline-offset: 3px;
 }
 
-/* Cabecera */
 
 .project-detail__header {
   padding-right: 24px;
@@ -114,7 +110,6 @@ body.project-dialog-open {
   line-height: 1.7;
 }
 
-/* Imágenes y descripción */
 
 .project-detail__content {
   display: grid;
@@ -192,7 +187,6 @@ body.project-dialog-open {
   line-height: 1.85;
 }
 
-/* CARRUSEL DENTRO DA CARTILLA MODAL (#project-dialog) */
 .dialog-carousel {
   position: relative;
   width: 100%;
@@ -282,7 +276,6 @@ body.project-dialog-open {
   transform: scale(1.3);
 }
 
-/* Datos inferiores */
 
 .project-detail__footer {
   display: grid;
@@ -313,7 +306,6 @@ body.project-dialog-open {
   line-height: 1.4;
 }
 
-/* Adaptación */
 
 @media (max-width: 1000px) {
   .project-detail__content {
