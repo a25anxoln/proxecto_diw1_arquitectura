@@ -7,17 +7,29 @@ const projects = [
         year: "2018",
         before: "img/gallineroAntiguo.png",
         after: [
-            "img/gallineroRestaurado.png",
-            "",
-            ""
+            {
+                src: "img/gallineroRestaurado.png",
+                alt: "Vista xeral do interior do galiñeiro restaurado con luz natural."
+            },
+            {
+                src: "img/galinheiro2.png",
+                alt: "Detalle da textura da pedra orixinal recuperada no muro oeste."
+            },
+            {
+                src: "img/galinheiro3.jpeg",
+                alt: "Relación do espazo interior coa paisaxe exterior a través da gran ventá."
+            }
         ],
+        // ----------------------------------------
         intro:
             "Unha nova vida para un espazo ligado á arquitectura rural galega.",
         start:
-            "Un antigo galiñeiro de pedra, marcado polo paso do tempo e polo seu uso orixinal.",
+            "Un antigo galiñeiro de pedra, marcado pelo paso do tempo e polo seu uso orixinal.",
         proposal:
             "Recuperar o carácter do espazo e poñer en valor a pedra, a madeira e a relación coa paisaxe."
     },
+    // Mantemos os outros proxectos coa estrutura antiga (cadeas simples)
+    // para demostrar que o código actualizado segue sendo compatible.
     {
         selector: ".project--terra",
         title: "Casa rural de pedra en Terra Chá",
@@ -103,18 +115,28 @@ function openProject(project, trigger) {
         afterContainer.innerHTML = `
             <div class="dialog-carousel">
                 <div class="dialog-carousel__track">
-                    ${project.after.map((src, idx) => `
-                        <div class="dialog-carousel__slide">
-                            <img src="${src}" alt="${project.title}: despois da rehabilitación (imaxe ${idx + 1})">
-                        </div>
-                    `).join('')}
+                    ${project.after.map((imageData) => {
+            const src = typeof imageData === 'object' ? imageData.src : imageData;
+            const alt = typeof imageData === 'object' ? imageData.alt : `${project.title}: despois da rehabilitación`;
+
+            if (!src) return '';
+
+            return `
+                            <div class="dialog-carousel__slide">
+                                <img src="${src}" alt="${alt}">
+                            </div>
+                        `;
+        }).join('')}
                 </div>
                 <button class="dialog-carousel__btn dialog-carousel__btn--prev" type="button" aria-label="Imaxe anterior">‹</button>
                 <button class="dialog-carousel__btn dialog-carousel__btn--next" type="button" aria-label="Imaxe seguinte">›</button>
                 <div class="dialog-carousel__dots">
-                    ${project.after.map((_, idx) => `
-                        <button class="dialog-carousel__dot ${idx === 0 ? 'active' : ''}" type="button" aria-label="Imaxe ${idx + 1}"></button>
-                    `).join('')}
+                    ${project.after.map((imageData, idx) => {
+            const src = typeof imageData === 'object' ? imageData.src : imageData;
+            if (!src) return '';
+
+            return `<button class="dialog-carousel__dot ${idx === 0 ? 'active' : ''}" type="button" aria-label="Imaxe ${idx + 1}"></button>`;
+        }).join('')}
                 </div>
             </div>
         `;
@@ -126,7 +148,7 @@ function openProject(project, trigger) {
         let currentIdx = 0;
 
         function goToSlide(index) {
-            currentIdx = (index + project.after.length) % project.after.length;
+            currentIdx = (index + track.children.length) % track.children.length; // Usamos track.children.length por seguridade
             track.style.transform = `translateX(-${currentIdx * 100}%)`;
             dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIdx));
         }
@@ -148,8 +170,12 @@ function openProject(project, trigger) {
             });
         });
     } else {
-        const afterSrc = Array.isArray(project.after) ? project.after[0] : project.after;
-        afterContainer.innerHTML = `<img id="detail-after" src="${afterSrc}" alt="${project.title}: despois da rehabilitación">`;
+        const imageData = Array.isArray(project.after) ? project.after[0] : project.after;
+
+        const afterSrc = typeof imageData === 'object' ? imageData.src : imageData;
+        const afterAlt = typeof imageData === 'object' ? imageData.alt : `${project.title}: despois da rehabilitación`;
+
+        afterContainer.innerHTML = `<img id="detail-after" src="${afterSrc}" alt="${afterAlt}">`;
     }
 
     lastTrigger = trigger;
